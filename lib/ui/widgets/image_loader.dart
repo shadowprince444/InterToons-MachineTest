@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
-
 class NetworkImageLoader extends StatefulWidget {
   const NetworkImageLoader(
       {Key? key,

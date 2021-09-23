@@ -20,7 +20,6 @@ class _HomeScreenBannerState extends State<HomeScreenBanner> {
     gridHeight = ScreenConfig.gridHeight;
     gridWidth = ScreenConfig.gridWidth;
     return Container(
-      // color: Colors.amber,
       width: gridWidth! * 100,
       padding: EdgeInsets.symmetric(
           vertical: gridHeight! * 2, horizontal: gridWidth! * 2),

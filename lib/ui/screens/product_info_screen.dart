@@ -8,7 +8,6 @@ import 'package:omanphones/models/product_info.dart';
 import 'package:omanphones/models/similar_products.dart';
 import 'package:omanphones/ui/screens/my_cart_screen.dart';
 import 'package:omanphones/ui/widgets/image_loader.dart';
-import 'package:omanphones/ui/widgets/product_tile.dart';
 import 'package:provider/provider.dart';
 
 import '../../constants.dart';
@@ -93,8 +92,6 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                 child: Column(
                   children: [
                     SizedBox(
-                      //color: Colors.white,
-                      // padding: EdgeInsets.only(bottom: gridHeight!),
                       child: Consumer<ProductInfo>(
                           builder: (context, productInfo, _) {
                         if (productInfo.id == null) {
@@ -111,25 +108,12 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                             Container(
                               color: Colors.white,
                               width: gridWidth! * 100,
-                              // height: gridHeight! * 42,
                               child: Padding(
                                 padding:
                                     EdgeInsets.symmetric(vertical: gridHeight!),
                                 child: Stack(
                                   children: [
-                                    // SizedBox(
-                                    //   width: gridWidth! * 100,
-                                    //   height: gridHeight! * 40,
-                                    // ),
-
-                                    //  print(productInfo.image[0].image);
-
-                                    // SizedBox(
-                                    //   width: gridWidth! * 100,
-                                    //   height: gridHeight! * 40,
-                                    //   child:
                                     CarouselSlider.builder(
-                                        //carouselController: caroselController,
                                         itemCount: imageList.length,
                                         options: CarouselOptions(),
                                         itemBuilder: (context, index,
@@ -166,10 +150,8 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                                                 return const Text('😢');
                                               },
                                             )),
-                                    // ),
                                     Positioned(
                                         right: gridWidth! * 3,
-                                        // top: gridHeight!,
                                         child: IconButton(
                                           icon: Icon(
                                             Icons.favorite,
@@ -188,9 +170,6 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                             ),
                             Container(
                               color: Colors.white,
-
-                              //constraints: BoxConstraints(maxHeight: gridHeight! * 20),
-                              //height: gridHeight! * 12,
                               padding: EdgeInsets.symmetric(
                                   vertical: gridHeight!,
                                   horizontal: gridWidth! * 4),
@@ -217,8 +196,6 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                                         color: Colors.amber,
                                         borderRadius: BorderRadius.circular(
                                             gridHeight! * 5)),
-                                    // padding:
-                                    //     EdgeInsets.symmetric(horizontal: gridWidth!),
                                     child: Row(
                                       children: [
                                         Icon(
@@ -240,7 +217,6 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                                     padding: EdgeInsets.symmetric(
                                       vertical: gridHeight! * .3,
                                     ),
-                                    // color: Colors.amber,
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
@@ -275,7 +251,6 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                             ),
                             Container(
                               color: Colors.white,
-                              // height: gridHeight! * 25,
                               padding: EdgeInsets.symmetric(
                                   vertical: gridHeight! * 2,
                                   horizontal: gridWidth! * 5),
@@ -326,38 +301,35 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                                         mainAxisExtent: gridHeight! * 8,
                                       ),
                                       itemBuilder: (context, gridIndex) =>
-                                          Container(
-                                        // height: gridHeight! * 10,
-                                        child: Column(
-                                          children: [
-                                            SizedBox(
-                                              height: gridHeight!,
-                                            ),
-                                            Expanded(
-                                              child: Center(
-                                                child: NetworkImageLoader(
-                                                  boxFit: BoxFit.contain,
-                                                  path: productInfo.attrs!
-                                                      .specs![gridIndex].icon!,
-                                                  defaultImage:
-                                                      Provider.of<BannerList>(
-                                                              context,
-                                                              listen: false)
-                                                          .defaultImage,
-                                                ),
+                                          Column(
+                                        children: [
+                                          SizedBox(
+                                            height: gridHeight!,
+                                          ),
+                                          Expanded(
+                                            child: Center(
+                                              child: NetworkImageLoader(
+                                                boxFit: BoxFit.contain,
+                                                path: productInfo.attrs!
+                                                    .specs![gridIndex].icon!,
+                                                defaultImage:
+                                                    Provider.of<BannerList>(
+                                                            context,
+                                                            listen: false)
+                                                        .defaultImage,
                                               ),
                                             ),
-                                            SizedBox(
-                                              child: Center(
-                                                child: Text(
-                                                  productInfo.attrs!
-                                                      .specs![gridIndex].value!,
-                                                  style: ScreenConfig.greyH3,
-                                                ),
+                                          ),
+                                          SizedBox(
+                                            child: Center(
+                                              child: Text(
+                                                productInfo.attrs!
+                                                    .specs![gridIndex].value!,
+                                                style: ScreenConfig.greyH3,
                                               ),
-                                            )
-                                          ],
-                                        ),
+                                            ),
+                                          )
+                                        ],
                                       ),
                                     ),
                                   ),
@@ -462,7 +434,6 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                                     mainAxisExtent: 30 * gridHeight!,
                                   ),
                                   itemBuilder: (context, gridIndex) {
-                                    print(similarProducts.productItems!.length);
                                     return InkWell(
                                       onTap: () {
                                         productInfo(
@@ -474,9 +445,6 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                                         padding: EdgeInsets.only(
                                             top: gridHeight! * .5),
                                         color: Colors.white,
-                                        // margin: EdgeInsets.all(
-                                        //     gridHeight! * .03),
-                                        // color: Colors.red,
                                         child: Column(
                                           children: [
                                             Stack(
@@ -556,7 +524,6 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                                               padding: EdgeInsets.symmetric(
                                                 vertical: gridHeight! * .3,
                                               ),
-                                              // color: Colors.amber,
                                               child: Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.center,
@@ -636,7 +603,6 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
     await ProductInfoScreenRepo()
         .fetchProductInfo(context, productId)
         .then((value) {
-      print(Provider.of<ProductInfo>(context, listen: false).name);
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => const ProductInfoScreen()));
     });

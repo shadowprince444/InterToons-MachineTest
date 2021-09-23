@@ -35,9 +35,6 @@ class _ProductTileState extends State<ProductTile> {
       child: Container(
         padding: EdgeInsets.only(top: gridHeight! * .5),
         color: Colors.white,
-        // margin: EdgeInsets.all(
-        //     gridHeight! * .03),
-        // color: Colors.red,
         child: isLoading
             ? const Center(
                 child: LoadingWidget(),
@@ -125,7 +122,6 @@ class _ProductTileState extends State<ProductTile> {
                     padding: EdgeInsets.symmetric(
                       vertical: gridHeight! * .3,
                     ),
-                    // color: Colors.amber,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
