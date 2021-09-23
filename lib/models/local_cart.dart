@@ -1,10 +1,8 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
 
-//import 'package:path_provider/path_provider.dart';
 class CartItem {
   String? productId, productName, imagePath;
   double? price, specialPrice;
@@ -40,11 +38,6 @@ class CartItem {
 class LocalCart with ChangeNotifier {
   List<CartItem> cartItemList = [];
   String storagePath = "";
-  // Future<String> getPath() async {
-  //   Directory appDocDir = await getApplicationDocumentsDirectory();
-  //   String appDocPath = appDocDir.path;
-  //   return appDocPath;
-  // }
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> cartlist = {};
@@ -99,7 +92,7 @@ class LocalCart with ChangeNotifier {
     }
 
     await update();
-    // print(cartItemList[index].quantity);
+
     notifyListeners();
   }
 

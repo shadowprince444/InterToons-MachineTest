@@ -16,7 +16,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
   @override
   void initState() {
     Provider.of<LocalCart>(context, listen: false).retrieve();
-    // TODO: implement initState
     super.initState();
   }
 
@@ -99,7 +98,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
 
                                     CartItem cartItem =
                                         localCart.cartItemList[index];
-                                    print(cartItem.specialPrice);
                                     if (cartItem.specialPrice != null) {
                                       totalRate = totalRate! +
                                           (cartItem.specialPrice! *
