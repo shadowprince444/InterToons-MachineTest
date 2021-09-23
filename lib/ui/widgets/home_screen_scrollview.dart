@@ -70,9 +70,9 @@ class _HomeScreenScrollViewState extends State<HomeScreenScrollView> {
                                     style: ScreenConfig.blackH2Bold,
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: gridHeight! * .5),
+                                SizedBox(
+                                  // padding: EdgeInsets.symmetric(
+                                  //     vertical: gridHeight! * .5),
                                   child: TextButton(
                                     onPressed: () {},
                                     child: const Text("View All"),
